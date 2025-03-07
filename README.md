@@ -50,28 +50,13 @@ This project focuses on analyzing sales performance using Power BI. The dashboar
 
 **Step 2: Creating Key Measures (DAX Calculations)**
 **Difference Percentage Calculation (KPI)**
-Difference Percentage = 
-VAR Diff = 
-    IF(
-        AND(
-            NOT(ISBLANK(SUM(Actuals[Actual Sales]))),
-            NOT(ISBLANK(SUM(Actuals[Expected Sales])))
-        ),
-        (SUM(Actuals[Actual Sales]) / SUM(Actuals[Expected Sales])) - 1,
-        BLANK()
-    )
-RETURN 
-    FORMAT(Diff, "0.0%")
+![image](https://github.com/user-attachments/assets/0d9c0cc9-f863-4d7a-966f-3288b62df18b)
+
+
 
 **Running Total for Actual Sales**
-RunningTotalSales = 
-CALCULATE(
-    SUM(Actuals[Actual Sales]),
-    FILTER(
-        ALLSELECTED(Actuals),
-        Actuals[YearMonthNumber] <= MAX(Actuals[YearMonthNumber])
-    )
-)
+![image](https://github.com/user-attachments/assets/0ac4453f-f0a0-485e-8f23-5efcae957643)
+
 
 
 **Step 3: Building the Visualizations**
